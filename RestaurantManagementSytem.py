@@ -1,23 +1,22 @@
 # NAME: Suka Cafe & Catering
 # DEVELOPER: NyanSniper101
 
-import os 
+import os
 
 # MAKING STORAGE FILES  #
-f = open("bfmaorder.txt", "w+") #breakfast storage
+f = open("bfmaorder.txt", "w+") # breakfast storage
 f.write("")
 f.close()
 
-f = open("lunchorder.txt", "w+") #lunch storage
+f = open("lunchorder.txt", "w+") # lunch storage
 f.write("")
 f.close()
 
-f = open("extraserv.txt", "w+") #extras storage
+f = open("extraserv.txt", "w+") # extras storage
 f.write("")
 f.close()
 
-# # # # # # # # # # # # #
-
+# # # # # # # # # # 
 print(50 * "%")
 print("")
 print ("SUKA CAFE & CATERING".center(50))
@@ -53,7 +52,7 @@ while True:
         goto(4)
       else:
         goto(100)
-   
+
     elif line == 2:
       if menuaccess == "B":
         breakfast=True
@@ -61,7 +60,7 @@ while True:
         print("BREAKFAST MENU".center(50))
         print(50 * "*")
         print(" ")
-      
+
         partyselect = input("Book A Party? [Y]/[N] >> ")
         while(partyselect!="Y" and partyselect!="N"):
           print("Invalid Character!")
@@ -69,7 +68,7 @@ while True:
         print(" ")
         if partyselect == "Y":
           partynumber = int(input("No Of Guests >> "))
-        
+
         print(" ")
         print("1. Nasi Lemak   	RM20")
         print("2. Fried Noodles	RM20")
@@ -77,9 +76,9 @@ while True:
         print("4. Pasta        	RM20")
         print("5. Hot Drink    	RM20")
         print("Press any other number to confirm your order")
-        
+
         bfma=int(input("\nSelect an Item Number >> "))
-        
+
         if partyselect == "N":
             sessionrate = 20
         elif partyselect == "Y":
@@ -93,7 +92,7 @@ while True:
                 sessionrate = 20 - 20*15/100
             elif partynumber >100:
                 sessionrate = 20 - 20*20/100
-               
+
         stringsession = str(sessionrate)
         while(bfma>0 and bfma<6):
           ratecounter += sessionrate
@@ -156,22 +155,22 @@ while True:
         print("LUNCH MENU".center(50))
         print(50 * "*")
         print(" ")
-    
+
         partyselect = input("Book A Party? [Y]/[N] >> ")
         print(" ")
         if partyselect == "Y":
             partynumber = int(input("No Of Guests >> "))
             print(" ")
-        
+
         print("1. Chicken Chop 	RM30")
         print("2. Steamed Fish 	RM30")
         print("3. Salad        	RM30")
         print("4. Fried Rice   	RM30")
         print("5. Soft Drink   	RM30")
         print("Press any other number to confirm your order")
-    
+
         lunchmenuaccess = int(input("\nSelect an Item Number >> "))
-    
+
         if partyselect == "N":
         	sessionrate = 30
         elif partyselect == "Y":
@@ -184,7 +183,7 @@ while True:
               sessionrate = 30 - 30*15/100
           if partynumber >100:
               sessionrate = 30 - 30*20/100
-                    
+
         stringsession = str(sessionrate)
         while(lunchmenuaccess>0 and lunchmenuaccess<6):
           ratecounter += sessionrate
@@ -247,14 +246,14 @@ while True:
         print("\n" + 50 * "*")
         print("EXTRAS MENU".center(50))
         print(50 * "*")
-        
+
         print(" ")
         print("1. Chairs       	RM2")
         print("2. Chair Sashes 	RM5")
         print("3. Tables       	RM35")
         print("4. Table cloths 	RM25")
         print("Press any other number to confirm your order")
-        
+
         extramenuaccess = int(input("\nSelect An Item[1],[2],[3],[4] >> "))
         extrarate = 0
         while(extramenuaccess>0 and extramenuaccess<5):
@@ -300,10 +299,10 @@ while True:
             f.write("\n")
             f.close()
           extramenuaccess = int(input("\nNext Item[1],[2],[3],[4] >> "))
-    
+
         print("INVALID ITEM NUMBER")
         print ("\nSelected Items have been Ordered")
-            
+
         print("\nTotal Price: ", ratecounter)
         print("Items Selected: ", ordername)
       EndReply=input("\nPress [M] to Return to Main Menu or \nPress [P] to Proceed to Payment Menu >> ")
@@ -353,7 +352,7 @@ if breakfast==True:
     print(30 * "=")
     print("Breakfast Order")
     print(30 * "=")
-    
+
     f = open("bfmaorder.txt", "r")
     for line in f:
         print (line)
@@ -366,20 +365,20 @@ if lunch==True:
     print(30 * "=")
     print("Lunch Order")
     print(30 * "=")
-    
+
     f = open("lunchorder.txt", "r")
     for line in f:
         print (line)
     f.close()
     print(30 * "-")
     print("\n")
-    
+
 # EXTRAS PRINTING #
 if extras==True:
     print(30 * "=")
     print("Extras Services Order")
     print(30 * "=")
-    
+
     f = open("extraserv.txt", "r")
     for line in f:
     	print(line)
@@ -407,4 +406,4 @@ else:
 
 print("Thanks for Visiting! Please Come Again! :-)")
 
-###############     END OF PROGRAM    ###############   
+###############     END OF PROGRAM    ###############
